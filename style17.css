@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#flip-card {
+  background-color: transparent;
+  width: 600px;
+  height: 500px;
+  perspective: 1000px;
+  margin: 10%;
+}
+
+#flip-card-inner {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#flip-card-front,
+#flip-card-back {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#flip-card-front {
+  background-color: #c8c8c8;
+  color: black;
+}
+
+#flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+  background-color: white;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-image: url("m.jpg");
+  z-index: 0;
+}
+
+#letter {
+  position: absolute;
+  top: 0px;
+  width: 50%;
+  height: 50%;
+  background-image: url("o.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  border-radius: 1px;
+  padding: 10px;
+}
+
+#envelope {
+  position: absolute;
+  height: 50px;
+  width: 60px;
+
+  top: 0;
+  left: 0;
+
+  border-top: 200px solid transparent;
+  border-right: 200px solid #4c00ff;
+  border-left: 200px solid #35beb3;
+  border-bottom: 300px solid #238991;
+  background-image: url("r.jpg");
+
+  z-index: 3;
+}
+
+.lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid transparent;
+  border-left: 200px solid transparent;
+  transform-origin: top;
+}
+
+#one {
+  border-top: 200px solid #a8a8a8;
+  transform: rotateX(0deg);
+  z-index: 3;
+}
+
+#two {
+  border-top: 200px solid white;
+  transform: rotateX(90deg);
+  z-index: 1;
+}
+
+#stamp {
+  position: absolute;
+  top: 10px;
+  flex: 0;
+}
+
+#stamp img {
+  float: right;
+  width: 35%;
+}
+
+#Name {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 35%;
+  color: black;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#companyName {
+  position: absolute;
+  top: -95%;
+  text-align: center;
+
+  color: red;
+  font-weight: 800;
+  left: 30%;
+  right: 30%;
+}
+
+#message {
+  position: absolute;
+  top: 10%;
+  color: rgb(0, 68, 255);
+  margin: 10px 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#popUp {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: #555;
+  z-index: 1;
+  display: none;
+}
